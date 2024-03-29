@@ -35,43 +35,43 @@ Route::post('/register', [CustomRegisteredUserController::class, 'store']);
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 
 
-    if(DB::table('hotels')->count() <1){
-        Route::get('/register-hotel', RegistrarHotelComponent::class)->name('register-hotel');
-    }
+    // if(DB::table('hotels')->count() <1){
+    //     Route::get('/register-hotel', RegistrarHotelComponent::class)->name('register-hotel');
+    // }
 
 
-    if (DB::table('hotels')->count() >= 1) {
-        Route::get('/register-hotel', function () {
-            return redirect()->route('inicio');
-        })->name('register-hotel');
-    }
-
-
-
-
-    if (DB::table('hotels')->count() === 0) {
-        Route::get('/inicio', function () {
-            return view('hotel-no-registrado');
-        })->name('inicio');
-
-        Route::get('/homeAdmin', function () {
-            return view('hotel-no-registrado');
-        })->name('homeAdmin');
-
-        Route::get('/hotel', function () {
-            return view('hotel-no-registrado');
-        })->name('hotel');
-    }
+    // if (DB::table('hotels')->count() >= 1) {
+    //     Route::get('/register-hotel', function () {
+    //         return redirect()->route('inicio');
+    //     })->name('register-hotel');
+    // }
 
 
 
 
+    // if (DB::table('hotels')->count() === 0) {
+    //     Route::get('/inicio', function () {
+    //         return view('hotel-no-registrado');
+    //     })->name('inicio');
 
-    else {
-        Route::get('/inicio', [HomeAdminController::class, 'create'])->name('inicio');
-        Route::get('/homeAdmin', HomeAdminComponent::class)->name('homeAdmin');
-        Route::get('/hotel', HotelComponent::class)->name('hotel');
-    }
+    //     Route::get('/homeAdmin', function () {
+    //         return view('hotel-no-registrado');
+    //     })->name('homeAdmin');
+
+    //     Route::get('/hotel', function () {
+    //         return view('hotel-no-registrado');
+    //     })->name('hotel');
+    // }
+
+
+
+
+
+    // else {
+    //     Route::get('/inicio', [HomeAdminController::class, 'create'])->name('inicio');
+    //     Route::get('/homeAdmin', HomeAdminComponent::class)->name('homeAdmin');
+    //     Route::get('/hotel', HotelComponent::class)->name('hotel');
+    // }
 
 
 
