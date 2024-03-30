@@ -33,16 +33,13 @@ Route::get('/register', [CustomRegisteredUserController::class, 'create'])->name
 Route::post('/register', [CustomRegisteredUserController::class, 'store']);
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-
-
-
     Route::get('/register-hotel', RegistrarHotelComponent::class)->name('register-hotel');
-
-
 
     Route::get('/inicio', [HomeAdminController::class, 'create'])->name('inicio');
     Route::get('/homeAdmin', HomeAdminComponent::class)->name('homeAdmin');
     Route::get('/hotel', HotelComponent::class)->name('hotel');
 
-
+    Route::get('/hotel-no-registrado', function () {
+        return view('hotel-no-registrado');
+    })->name('hotel-no-registrado');
 });

@@ -8,11 +8,18 @@ use Livewire\Component;
 
 class HomeAdminComponent extends Component
 {
-    public function render()
+    
+    public function mount()
     {
         if (DB::table('hotels')->count() === 0) {
-            return view('hotel-no-registrado');
+            return redirect()->route('hotel-no-registrado');
         }
+    }
+
+
+
+    public function render()
+    {
 
 
         $hotels = Hotel::all();
