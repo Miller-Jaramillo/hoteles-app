@@ -3,6 +3,7 @@
 namespace App\Livewire\Administrador\Hotel;
 
 use App\Models\Hotel;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
@@ -16,6 +17,15 @@ class RegistrarHotelComponent extends Component
     public $name_hotel;
     public $slogan;
     public $final_slogan;
+
+    public function mount()
+    {
+        if (DB::table('hotels')->count() >= 1) {
+            return redirect()->route('inicio');
+        }
+
+        return view('livewire.administrador.hotel.registrar-hotel-component');
+    }
 
     public function render()
     {
@@ -36,7 +46,6 @@ class RegistrarHotelComponent extends Component
             ];
         }
     }
-
 
     public function submitForm()
     {
@@ -60,6 +69,4 @@ class RegistrarHotelComponent extends Component
 
         return redirect()->route('inicio');
     }
-
-
 }
