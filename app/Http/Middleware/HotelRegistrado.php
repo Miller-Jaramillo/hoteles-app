@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckHotelRegistration
+class HotelRegistrado
 {
     /**
      * Handle an incoming request.
@@ -18,15 +18,10 @@ class CheckHotelRegistration
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Hotel::count() === 0 && $request->routeIs('')) {
-            return redirect(RouteServiceProvider::REGISTRAR_HOTEL);
-        }
-
         if(Hotel::count() > 0 && Auth::check())
         {
             return redirect(RouteServiceProvider::INICIO_ADMINISTRADOR);
         }
-
         return $next($request);
     }
 }

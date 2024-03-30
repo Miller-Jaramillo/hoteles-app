@@ -74,7 +74,7 @@ return [
     |
     */
 
-    'home' => fn() => Hotel::count() === 0 ? '/register-hotel' : '/inicio',
+    'home' => fn() => Hotel::count() === 0 ? '/registrar-hotel' : '/inicio-administrador',
 
 
     /*

@@ -37,7 +37,7 @@
                 <div class="sm:fixed sm:top-0 sm:right-0 p-2 mr-2 text-right z-10 ">
 
                     @auth
-                        <a href="{{ route('homeAdmin') }}"
+                        <a href="{{ route('inicio-administrador') }}"
                             class="flex justify-center font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 no-underline text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                                 <path fill-rule="evenodd"

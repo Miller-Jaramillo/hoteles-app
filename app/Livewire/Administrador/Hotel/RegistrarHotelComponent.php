@@ -18,14 +18,6 @@ class RegistrarHotelComponent extends Component
     public $slogan;
     public $final_slogan;
 
-    public function mount()
-    {
-        if (DB::table('hotels')->count() >= 1) {
-            return redirect()->route('inicio');
-        }
-
-        return view('livewire.administrador.hotel.registrar-hotel-component');
-    }
 
     public function render()
     {
@@ -67,6 +59,6 @@ class RegistrarHotelComponent extends Component
 
         session()->flash('message', 'Hotel registrado correctamente.');
 
-        return redirect()->route('inicio');
+        return redirect()->route('inicio-administrador');
     }
 }

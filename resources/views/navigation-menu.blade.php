@@ -19,8 +19,8 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
 
-                    <x-nav-link href="{{ route('homeAdmin') }}" :active="request()->routeIs('homeAdmin')">
-                        {{ __('Home') }}
+                    <x-nav-link href="{{ route('inicio-administrador') }}" :active="request()->routeIs('inicio-administrador')">
+                        {{ __('Inicio') }}
                     </x-nav-link>
 
                       <x-nav-link href="{{ route('hotel') }}" :active="request()->routeIs('hotel')">
@@ -178,8 +178,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('inicio') }}" :active="request()->routeIs('inicio')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link href="{{ route('inicio-administrador') }}" :active="request()->routeIs('inicio-administrador')">
+                {{ __('Inicio') }}
             </x-responsive-nav-link>
         </div>
 

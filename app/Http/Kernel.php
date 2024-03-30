@@ -65,6 +65,11 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'checkHotelRegistration' => \App\Http\Middleware\CheckHotelRegistration::class,
+        'user-existe' => \App\Http\Middleware\RedirectNoMasAdministradores::class,
+        'hotel-registrado' => \App\Http\Middleware\HotelRegistrado::class,
+        'limpiar-cache' => \App\Http\Middleware\LimpiarCache::class,
+
+
     ];
 
 

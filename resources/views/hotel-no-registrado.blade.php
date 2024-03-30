@@ -7,12 +7,14 @@
         <x-slot name="logo">
             <x-authentication-card-logo />
         </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Para acceder a esta sección, primero debes registrar tu hotel.') }}
+        <div class="mb-4 text-sm text-gray-600 text-center">
+            {{ __('Estimado usuario, para acceder a esta sección de administración, primero debes registrar tu hotel.') }}
+            <br>
+            {{ __('¡Gracias por tu comprensión!') }}
         </div>
 
-        <form method="GET" action="{{ route('register-hotel') }}">
+
+        <form method="GET" action="{{ route('registrar-hotel') }}">
             @csrf
             <div class="mt-4 flex justify-center">
                 <x-button>
